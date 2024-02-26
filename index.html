@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>README Icons</title>
+
+  <script>
+    /**
+     * List of SVG icons
+     * 
+     * @type string[]
+     */
+    var icons = [
+      "github-gist.svg",
+      "github-pages.svg",
+      "github.svg",
+      "npm.svg",
+    ].sort();
+  </script>
+
+  <style>
+    :root {
+      font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      font-weight: 400;
+
+      color-scheme: light dark;
+      color: rgba(0, 0, 0, 0.87);
+      background-color: #f9fafb;
+
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      margin: 4rem;
+    }
+
+    #icons {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 128px);
+      gap: 1rem;
+      place-content: center;
+    }
+
+    .icon {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #ac1717;
+      padding: 0.25rem;
+      color: white;
+      border-radius: 2px;
+      font-size: 14px;
+      text-align: center;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      ;
+    }
+
+    .icon>img {
+      background: #f9fafb;
+      object-fit: contain;
+      max-width: 100%;
+    }
+
+    .icon>div {
+      margin: 0px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      padding: 0.25rem 0.5rem;
+      min-height: 64px;
+    }
+
+    .icon>div>a {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="icons"></div>
+
+  <script>
+    /**
+     * @type HTMLDivElement
+     */
+    const $icons = document.getElementById("icons");
+
+    icons.map((icon) => {
+      const name = icon.replace(/\.\w+$/g, "");
+
+      const $icon = document.createElement("div");
+      $icon.className = "icon";
+      $icon.innerHTML = `
+        <img src="./${icon}" height="64" >
+        <div>
+          <a href="./${icon}" aria-label="icon-${name}">${name}</a>
+        </div>
+      `;
+
+      $icons.appendChild($icon);
+    })
+  </script>
+</body>
+
+</html>
