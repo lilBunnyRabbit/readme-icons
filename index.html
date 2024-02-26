@@ -103,7 +103,9 @@
       const $icon = document.createElement("div");
       $icon.className = "icon";
       $icon.innerHTML = `
-        <img src="./${icon}" height="64" >
+        <div>
+          <img src="./${icon}">
+        </div>
         <div>
           <a href="./${icon}" aria-label="icon-${name}">${name}</a>
         </div>
