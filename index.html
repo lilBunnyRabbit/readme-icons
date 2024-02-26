@@ -48,38 +48,42 @@
     }
 
     .icon {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background: #ac1717;
-      padding: 0.25rem;
-      color: white;
+      display: grid;
+      grid-template-rows: min-content, 1fr;
+      background: black;
+      border: 4px solid black;
       border-radius: 2px;
-      font-size: 14px;
-      text-align: center;
       box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-      ;
     }
 
-    .icon>img {
+    .icon>div:first-of-type {
+      aspect-ratio: 1/1;
+      background: #28282f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .icon>div:first-of-type>img {
       background: #f9fafb;
       object-fit: contain;
       max-width: 100%;
+      height: fit-content;
     }
 
-    .icon>div {
-      margin: 0px;
-      flex: 1;
+    .icon>div:last-of-type {
       display: flex;
-      align-items: center;
-      font-weight: 600;
-      padding: 0.25rem 0.5rem;
-      min-height: 64px;
+      justify-content: center;
+      align-content: center;
+      height: 100%;
+      padding: 0.25rem 0rem;
     }
 
-    .icon>div>a {
+    .icon>div:last-of-type>a {
       color: white;
+      font-weight: 600;
+      font-size: 14px;
+      text-align: center;
     }
   </style>
 </head>
